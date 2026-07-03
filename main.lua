@@ -117,7 +117,9 @@ task.spawn(function()
                     if Char.Humanoid.Health == Char.Humanoid.MaxHealth then
                         if inst.Name == "Bandage" then continue end
                     end
-                    ItemCache[InstId(inst)] = inst
+                    if InstId(inst) then
+                        ItemCache[InstId(inst)] = inst
+                    end
                 end
             end
         end
