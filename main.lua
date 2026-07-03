@@ -65,9 +65,11 @@ RunService.Render:Connect(function()
             end
         end
 
-        if vector.magnitude(RootPos - Primary.Position) < 300 then
-            local Position, Visible = Camera:WorldToScreenPoint(Primary.Position)
-            DrawingImmediate.OutlinedText(Position, 13, Color3.fromRGB(49, 228, 173), 1, inst.Name, true)
+        if Primary:IsA("Part") then
+            if vector.magnitude(RootPos - Primary.Position) < 300 then
+                local Position, Visible = Camera:WorldToScreenPoint(Primary.Position)
+                DrawingImmediate.OutlinedText(Position, 13, Color3.fromRGB(49, 228, 173), 1, inst.Name, true)
+            end
         end
     end
 end)
